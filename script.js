@@ -134,9 +134,9 @@ var sounds = {
 var soundControl = {
 	entry: document.getElementsByClassName('entry'),
 	speed: document.getElementsByClassName('tempo'),
-	replayButton: document.getElementById('replay'),
 	submitAll: document.getElementsByClassName('submitAll'),
 	stopAll: document.getElementsByClassName('stopAll'),
+	replayButton: document.getElementById('replay'),
 	letterNumber: [0,0,0],
 	timeouts: [],
 	currentlyPlaying: [false, false, false],
@@ -289,51 +289,51 @@ var soundControl = {
 		}
 	}),
 	replay: document.getElementById('replay').onclick = function(){
-		if (soundControl.replayButton.style.opacity == '1') {
-			soundControl.replayButton.style.opacity = '0.5';
+		if (this.style.opacity == '1') {
+			this.style.opacity = '0.5';
 		}
 		else {
-			soundControl.replayButton.style.opacity = '1';
+			this.style.opacity = '1';
 		}
 	},	
 	soundFromText: function soundFromText(){
 		function play(level){
-			if (soundControl.currentlyPlaying[level] == false) {
-				soundControl.letterNumber[level] = 0;
-				soundControl.loop(level);
+			if (this.currentlyPlaying[level] == false) {
+				this.letterNumber[level] = 0;
+				this.loop(level);
 			}
 		}
 		function stop(level){
-			clearInterval(soundControl.timeouts[level]);
-			soundControl.currentlyPlaying[level] = false;
-			soundControl.letterNumber[level] = 0;
+			clearInterval(this.timeouts[level]);
+			this.currentlyPlaying[level] = false;
+			this.letterNumber[level] = 0;
 		}
 		document.getElementById('submit').onclick = function(){
 			for(var x=0; x<3;x++){	
-				play(x);
+				play.call(soundControl, x);
 			}
 		}
 		document.getElementById('stop').onclick = function(){
 			for(var x=0; x<3;x++){
-				stop(x);
+				stop.call(soundControl, x);
 			}
 		}
 		for(var x=0; x<3;x++){
 			(function(x){
 				soundControl.submitAll[x].onclick = function(){
-					play(x);
+					play.call(soundControl, x);
 				}
 				soundControl.stopAll[x].onclick = function(){
-					stop(x);
+					stop.call(soundControl, x);
 				}
 			})(x);
 		}
 	},
 	allowOnlyLetters: function(){
 		for(var x=0;x<3;x++){
-			soundControl.entry[x].onkeydown = function(e){
+			this.entry[x].onkeydown = function(e){
 				var key = e.keyCode || e.which;
-				if( !(key >= 65 && key <= 120) && (key != 32 && key != 0) && key != 8 ) { 
+				if( !(key >= 65 && key <= 120) && (key != 32 && key != 0) && key != 8 && !(key >= 37 && key <= 40) ) { 
 					e.preventDefault();
 				}
 			}
@@ -573,13 +573,13 @@ var visual = {
 	delta: null,
 	rotation: 60,
 	draw: function(){
-		visual.firstFloor.style.transform = 'rotateX(' + visual.rotation + 'deg) rotateZ(45deg)';
-		visual.secondFloor.style.transform = 'rotateX(' + visual.rotation + 'deg) rotateZ(45deg) translateZ(-100px)';
-		visual.thirdFloor.style.transform = 'rotateX(' + visual.rotation + 'deg) rotateZ(45deg) translateZ(-200px)';
+		this.firstFloor.style.transform = 'rotateX(' + this.rotation + 'deg) rotateZ(45deg)';
+		this.secondFloor.style.transform = 'rotateX(' + this.rotation + 'deg) rotateZ(45deg) translateZ(-100px)';
+		this.thirdFloor.style.transform = 'rotateX(' + this.rotation + 'deg) rotateZ(45deg) translateZ(-200px)';
 		
-		visual.firstFloor.style.webkitTransform = 'rotateX(' + visual.rotation + 'deg) rotateZ(45deg)';
-		visual.secondFloor.style.webkitTransform = 'rotateX(' + visual.rotation + 'deg) rotateZ(45deg) translateZ(-100px)';
-		visual.thirdFloor.style.webkitTransform = 'rotateX(' + visual.rotation + 'deg) rotateZ(45deg) translateZ(-200px)';
+		this.firstFloor.style.webkitTransform = 'rotateX(' + this.rotation + 'deg) rotateZ(45deg)';
+		this.secondFloor.style.webkitTransform = 'rotateX(' + this.rotation + 'deg) rotateZ(45deg) translateZ(-100px)';
+		this.thirdFloor.style.webkitTransform = 'rotateX(' + this.rotation + 'deg) rotateZ(45deg) translateZ(-200px)';
 	},
 	changePerspective: function(){
 		window.onmousedown = function(e){
