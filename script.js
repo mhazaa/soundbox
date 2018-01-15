@@ -147,82 +147,108 @@ var soundControl = {
 		}
 
 		switch(string){
-			case 'q' || 'Q':
+			case 'q':
+			case 'Q':
 				sounds.hiphippo();
 				break;
-			case 'w' || 'W':
+			case 'w':
+			case 'W':
 				sounds.funk();
 				break;
-			case 'e' || 'E':
+			case 'e':
+			case 'E':
 				sounds.bigdrum();
 				break;
-			case 'r' || 'R':
+			case 'r':
+			case 'R':
 				sounds.lowsnair();
 				break;	
-			case 't' || 'T':
+			case 't':
+			case 'T':
 				sounds.drop();
 				break;
-			case 'y' || 'Y':
+			case 'y':
+			case 'Y':
 				sounds.timbale();
 				break;		
-			case 'u' || 'U':
+			case 'u':
+			case 'U':
 				sounds.bass();
 				break;
-			case 'i' || 'I':
+			case 'i':
+			case 'I':
 				sounds.disk();
 				break;
-			case 'o' || 'O':
+			case 'o':
+			case 'O':
 				sounds.hiphoptic();
 				break;
-			case 'p' ||'P':
+			case 'p':
+			case 'P':
 				sounds.tempo();
 				break;	
-			case 'a' || 'A':
+			case 'a':
+			case 'A':
 				sounds.slap();
 				break;
-			case 's' || 'S':
+			case 's':
+			case 'S':
 				sounds.opener();
 				break;
-			case 'd' || 'D':
+			case 'd':
+			case 'D':
 				sounds.clap();
 				break;
-			case 'f' || 'F':
+			case 'f':
+			case 'F':
 				sounds.smalldrum();
 				break;
-			case 'g' || 'G':
+			case 'g':
+			case 'G':
 				sounds.kik();
 				break;
-			case 'h' || 'H':
+			case 'h':
+			case 'H':
 				sounds.ring();
 				break;
-			case 'j' || 'J':
+			case 'j':
+			case 'J':
 				sounds.ghost();
 				break;	
-			case 'k' || 'K':
+			case 'k':
+			case 'K':
 				sounds.rap();
 				break;
-			case 'l' || 'L':
+			case 'l':
+			case 'L':
 				sounds.snair();
 				break;
-			case 'z' || 'Z':
+			case 'z':
+			case 'Z':
 				sounds.tick();
 				break;
-			case 'x' || 'X':
+			case 'x':
+			case 'X':
 				sounds.shaft();
 				break;
-			case 'c' || 'C':
+			case 'c':
+			case 'C':
 				sounds.alien();
 				break;
-			case 'v' || 'V':
+			case 'v':
+			case 'V':
 				sounds.dopeshit();
 				break;
-			case 'b' || 'B':
+			case 'b':
+			case 'B':
 				sounds.sexobass();
 				break;
-			case 'n' || 'N':
+			case 'n':
+			case 'N':
 				sounds.pull();
 				break;
-			case 'm' || 'M':
+			case 'm':
+			case 'M':
 				sounds.biotic();
 				break;
 			case ' ':
